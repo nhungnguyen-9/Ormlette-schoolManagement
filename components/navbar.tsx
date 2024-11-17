@@ -15,7 +15,7 @@ export const Navbar = () => {
                 </div>
                 <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
                     <Bell className="size-6" />
-                    <div className="absolute -top-3 -right-3 w-5 h-5 flex items-center justify-center bg-yellow-500 text-white rounded-full">1</div>
+                    <div className="absolute -top-2 -right-2 w-4 h-4 flex items-center justify-center bg-yellow-500 text-white rounded-full">1</div>
                 </div>
                 <div className="flex flex-col">
                     <span className="text-sm leading-3 font-medium">John Doe</span>
