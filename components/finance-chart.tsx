@@ -67,7 +67,7 @@ export const FinanceChart = () => {
         <div className='bg-white rounded-xl p-4 h-full'>
             <div className='flex justify-between items-center'>
                 <h1 className='text-lg font-semibold'>Finance</h1>
-                <Ellipsis className="size-4" />
+                <Ellipsis className="size-6" />
             </div>
             <ResponsiveContainer width="100%" height="90%">
                 <LineChart

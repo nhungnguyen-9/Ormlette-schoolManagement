@@ -10,10 +10,10 @@ export const Navbar = () => {
             </div>
             {/* icon and user */}
             <div className="flex items-center gap-6 justify-end w-full">
-                <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
+                <div className="rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
                     <MessageCircleMore className="size-6" />
                 </div>
-                <div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
+                <div className="rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
                     <Bell className="size-6" />
                     <div className="absolute -top-2 -right-2 w-4 h-4 flex items-center justify-center bg-yellow-500 text-white rounded-full">1</div>
                 </div>

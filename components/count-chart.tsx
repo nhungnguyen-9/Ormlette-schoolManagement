@@ -27,7 +27,7 @@ export const CountChart = () => {
         <div className="bg-white rounded-xl w-full h-full p-4">
             <div className="flex justify-between items-center">
                 <h1 className="text-lg font-semibold">Students</h1>
-                <Ellipsis className="size-4" />
+                <Ellipsis className="size-6" />
             </div>
             {/* chart */}
             <div className="relative w-full h-[75%]">
