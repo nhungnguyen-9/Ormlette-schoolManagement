@@ -64,7 +64,7 @@ const data = [
 
 export const FinanceChart = () => {
     return (
-        <div className='bg-white rounded-xl w-full p-4 h-full'>
+        <div className='bg-white rounded-xl p-4 h-full'>
             <div className='flex justify-between items-center'>
                 <h1 className='text-lg font-semibold'>Finance</h1>
                 <Ellipsis className="size-4" />
