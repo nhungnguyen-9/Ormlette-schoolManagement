@@ -24,9 +24,7 @@ abbr:where([title]) {
   margin-top: 10px !important;
 }
 .rbc-btn-group button {
-  /* display: none !important; */
   font-size: 13px !important;
-  /* margin-top: 15px !important; */
 }
 
 .rbc-toolbar-label {
