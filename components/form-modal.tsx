@@ -1,6 +1,6 @@
 'use client'
 
-import { Trash2 } from "lucide-react";
+import { X } from "lucide-react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useState } from "react";
@@ -50,7 +50,7 @@ export const FormModal = ({
             ? "bg-lamaYellow"
             : type === "update"
                 ? "bg-lamaSky"
-                : "bg-lamaPurple";
+                : "bg-lamaYellowLight";
 
     const [open, setOpen] = useState(false);
 
@@ -77,7 +77,7 @@ export const FormModal = ({
                 className={`${size} flex items-center justify-center rounded-full ${bgColor}`}
                 onClick={() => setOpen(true)}
             >
-                <Image src={`/${type}.png`} alt="" width={20} height={20} />
+                <Image src={`/${type}.png`} alt="" width={19} height={19} />
             </button>
             {open && (
                 <div className="w-screen h-screen absolute left-0 top-0 bg-black bg-opacity-60 z-50 flex items-center justify-center">
@@ -87,7 +87,7 @@ export const FormModal = ({
                             className="absolute top-4 right-4 cursor-pointer"
                             onClick={() => setOpen(false)}
                         >
-                            <Image src="/close.png" alt="" width={14} height={14} />
+                            <X className="size-5" />
                         </div>
                     </div>
                 </div>
