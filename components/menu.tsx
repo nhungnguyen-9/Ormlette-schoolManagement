@@ -1,6 +1,6 @@
 'use client'
 
-import { Backpack, BookA, CalendarClock, ClipboardCheck, ContactRound, GraduationCap, HomeIcon as House, LogOut, Megaphone, MessageSquare, Presentation, Settings, Shapes, UserCheck, UserRoundIcon as UserRoundPen, Users } from 'lucide-react';
+import { Backpack, BookA, CalendarClock, ClipboardCheck, ContactRound, GraduationCap, HomeIcon as House, LogOut, Megaphone, MessageSquare, NotebookText, Presentation, Settings, Shapes, UserCheck, UserRoundIcon as UserRoundPen, Users } from 'lucide-react';
 import Link from "next/link";
 import { Hint } from "./hint";
 import { useEffect, useState } from "react";
@@ -33,6 +33,12 @@ const menuItems = [
                 label: 'Parents',
                 href: "/list/parents",
                 visible: ["admin", "teacher"],
+            },
+            {
+                icon: NotebookText,
+                label: 'Subjects',
+                href: "/list/subjects",
+                visible: ["admin"],
             },
             {
                 icon: Shapes,
