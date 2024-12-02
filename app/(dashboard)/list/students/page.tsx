@@ -109,6 +109,8 @@ const StudentListPage = async ({
                     case 'search':
                         query.name = { contains: value, mode: 'insensitive' }
                         break;
+                    default:
+                        break;
                 }
             }
         }
