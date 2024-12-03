@@ -55,13 +55,14 @@ const renderRow = (item: AnnouncementList) => (
 );
 
 interface Props {
-    searchParams: { [key: string]: string | undefined }
+    searchParams: Promise<{ [key: string]: string | undefined }>
 }
 
 const AnnouncementListPage = async ({
     searchParams
 }: Props) => {
-    const { page, ...queryParams } = searchParams
+    const resolvedSearchParams = await searchParams
+    const { page, ...queryParams } = resolvedSearchParams
 
     const p = page ? parseInt(page) : 1
 
