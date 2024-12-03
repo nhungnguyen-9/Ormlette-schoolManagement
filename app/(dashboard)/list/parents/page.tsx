@@ -64,14 +64,17 @@ const renderRow = (item: ParentList) => (
             </div>
         </td>
     </tr>
-);
+)
+
+interface Props {
+    searchParams: Promise<{ [key: string]: string | undefined }>
+}
 
 const ParentListPage = async ({
     searchParams
-}: {
-    searchParams: { [key: string]: string | undefined }
-}) => {
-    const { page, ...queryParams } = searchParams
+}: Props) => {
+    const resolvedSearchParams = await searchParams
+    const { page, ...queryParams } = resolvedSearchParams
 
     const p = page ? parseInt(page) : 1
 
