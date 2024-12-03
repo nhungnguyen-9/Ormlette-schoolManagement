@@ -54,11 +54,13 @@ const renderRow = (item: AnnouncementList) => (
     </tr>
 );
 
+interface Props {
+    searchParams: { [key: string]: string | undefined }
+}
+
 const AnnouncementListPage = async ({
     searchParams
-}: {
-    searchParams: { [key: string]: string | undefined }
-}) => {
+}: Props) => {
     const { page, ...queryParams } = searchParams
 
     const p = page ? parseInt(page) : 1
