@@ -49,7 +49,7 @@ const renderRow = (item: ExamList) => (
         <td className="flex items-center gap-4 p-4">{item.lesson.subject.name}</td>
         <td>{item.lesson.class.name}</td>
         <td className="hidden md:table-cell">{item.lesson.teacher.name + ' ' + item.lesson.teacher.surname}</td>
-        <td className="hidden md:table-cell">{new Intl.DateTimeFormat('vi-VN').format(item.startTime)}</td>
+        <td className="hidden md:table-cell">{new Intl.DateTimeFormat('en-US').format(item.startTime)}</td>
         <td>
             <div className="flex items-center gap-2">
                 {role === "admin" || role === 'teacher' && (

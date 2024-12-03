@@ -65,7 +65,7 @@ const renderRow = (item: ResultList) => (
         <td className="hidden md:table-cell">{item.score}</td>
         <td className="hidden md:table-cell">{item.teacherName + ' ' + item.teacherSurname}</td>
         <td className="hidden md:table-cell">{item.className}</td>
-        <td className="hidden md:table-cell">{new Intl.DateTimeFormat('vi-VN').format(item.startTime)}</td>
+        <td className="hidden md:table-cell">{new Intl.DateTimeFormat('en-US').format(item.startTime)}</td>
         <td>
             <div className="flex items-center gap-2">
                 {role === "admin" || role === "teacher" && (
