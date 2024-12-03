@@ -31,7 +31,7 @@ const columns = [
         className: "hidden md:table-cell",
     },
     {
-        header: "Date",
+        header: "Start Date",
         accessor: "date",
         className: "hidden md:table-cell",
     },
