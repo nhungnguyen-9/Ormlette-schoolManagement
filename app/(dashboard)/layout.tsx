@@ -1,4 +1,4 @@
-import { Menu } from "@/components/menu";
+import { MenuWrapper } from "@/components/menu-wrapper";
 import { Navbar } from "@/components/navbar";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,7 +23,7 @@ export default function DashboardLayout({
                         height={150}
                     />
                 </Link>
-                <Menu />
+                <MenuWrapper />
             </div>
             <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] overflow-scroll flex flex-col">
                 <Navbar />

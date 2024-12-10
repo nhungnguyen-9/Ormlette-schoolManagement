@@ -2,11 +2,14 @@ import { FormModal } from "@/components/form-modal";
 import { Pagination } from "@/components/pagination";
 import { Table } from "@/components/table";
 import { TableSearch } from "@/components/table-search";
-import { role, } from "@/lib/data";
 import prisma from "@/lib/db";
 import { ITEM_PER_PAGE } from "@/lib/settings";
+import { auth } from "@clerk/nextjs/server";
 import { Class, Prisma, Teacher } from "@prisma/client";
 import { ArrowDownUp, SlidersHorizontal } from "lucide-react";
+
+const { sessionClaims } = await auth()
+const role = (sessionClaims?.metadata as { role?: string })?.role
 
 type ClassList = Class & { supervisor: Teacher }
 
@@ -30,10 +33,10 @@ const columns = [
         accessor: "supervisor",
         className: "hidden md:table-cell",
     },
-    {
+    ...(role === 'admin' ? [{
         header: "Actions",
         accessor: "action",
-    },
+    }] : []),
 ];
 
 const renderRow = (item: ClassList) => (

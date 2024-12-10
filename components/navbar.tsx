@@ -1,9 +1,9 @@
-'use client'
-import { UserButton, useUser } from "@clerk/nextjs"
-import { Bell, CircleUserRound, MessageCircleMore, Search } from "lucide-react"
+import { UserButton } from "@clerk/nextjs"
+import { currentUser } from "@clerk/nextjs/server"
+import { Bell, MessageCircleMore, Search } from "lucide-react"
 
-export const Navbar = () => {
-    const { user } = useUser()
+export const Navbar = async () => {
+    const user = await currentUser()
 
     return (
         <div className="flex items-center justify-between p-4">
@@ -23,7 +23,7 @@ export const Navbar = () => {
                 </div>
                 <div className="flex flex-col">
                     <span className="text-sm leading-3 font-medium">John Doe</span>
-                    <span className="text-[10px] text-gray-500 text-right">Admin</span>
+                    <span className="text-[10px] text-gray-500 text-right uppercase font-semibold mt-1">{user?.publicMetadata?.role as string} </span>
                 </div>
                 <UserButton />
             </div>

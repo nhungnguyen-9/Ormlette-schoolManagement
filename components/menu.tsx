@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Hint } from "./hint";
 import { useEffect, useState } from "react";
 import { role } from '@/lib/data';
+import { currentUser } from '@clerk/nextjs/server';
 
 const menuItems = [
     {
@@ -121,7 +122,11 @@ const menuItems = [
     }
 ]
 
-export const Menu = () => {
+export const Menu = ({
+    role
+}: {
+    role: string | null
+}) => {
     const [isSmallScreen, setIsSmallScreen] = useState(false)
 
     useEffect(() => {
@@ -144,7 +149,7 @@ export const Menu = () => {
                     </span>
                     {section.items.map((item) => {
                         const Icon = item.icon;
-                        if (item.visible.includes(role)) {
+                        if (role && item.visible.includes(role)) {
                             return (
                                 <Link
                                     href={item.href}

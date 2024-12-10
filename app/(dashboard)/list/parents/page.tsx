@@ -2,13 +2,14 @@ import { FormModal } from "@/components/form-modal";
 import { Pagination } from "@/components/pagination";
 import { Table } from "@/components/table";
 import { TableSearch } from "@/components/table-search";
-import { parentsData, role, } from "@/lib/data";
 import prisma from "@/lib/db";
 import { ITEM_PER_PAGE } from "@/lib/settings";
+import { auth } from "@clerk/nextjs/server";
 import { Parent, Prisma, Student } from "@prisma/client";
-import { ArrowDownUp, Eye, SlidersHorizontal } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { ArrowDownUp, SlidersHorizontal } from "lucide-react";
+
+const { sessionClaims } = await auth()
+const role = (sessionClaims?.metadata as { role?: string })?.role
 
 type ParentList = Parent & { students: Student[] }
 
@@ -33,10 +34,10 @@ const columns = [
         accessor: "address",
         className: "hidden lg:table-cell",
     },
-    {
+    ...(role === 'admin' ? [{
         header: "Actions",
         accessor: "action",
-    },
+    }] : []),
 ];
 
 const renderRow = (item: ParentList) => (
@@ -122,7 +123,7 @@ const ParentListPage = async ({
                             <ArrowDownUp className="size-5" />
                         </button>
                         {role === "admin" && (
-                            <FormModal table="teacher" type="create" />
+                            <FormModal table="parent" type="create" />
                         )}
                     </div>
                 </div>
