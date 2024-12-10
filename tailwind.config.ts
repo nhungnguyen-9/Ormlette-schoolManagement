@@ -13,6 +13,7 @@ export default {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+				"loginImg": "url('https://images.unsplash.com/photo-1501349800519-48093d60bde0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGVkdWNhdGlvbnxlbnwwfHwwfHx8MA%3D%3D')"
 			},
 			colors: {
 				background: 'hsl(var(--background))',

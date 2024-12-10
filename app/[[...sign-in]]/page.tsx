@@ -24,17 +24,15 @@ export default function LoginPage() {
       <SignIn.Root>
         <SignIn.Step
           name="start"
-          className="bg-white p-12 rounded-md shadow-2xl flex flex-col gap-2"
+          className="relative bg-white p-12 rounded-xl shadow-2xl flex flex-col gap-2 z-10"
         >
-          <h1 className="text-xl font-bold flex items-center gap-2">
+          <div className="flex justify-center items-center">
             <Image src="/new.png" alt="" width={120} height={120} />
-          </h1>
+          </div>
           <h2 className="text-gray-400">Sign in to your account</h2>
           <Clerk.GlobalError className="text-sm text-red-400" />
           <Clerk.Field name="identifier" className="flex flex-col gap-2 mt-1">
-            <Clerk.Label className="text-xs text-gray-500">
-              Email
-            </Clerk.Label>
+            <Clerk.Label className="text-xs text-gray-500">Email</Clerk.Label>
             <Clerk.Input
               type="email"
               required
@@ -43,9 +41,7 @@ export default function LoginPage() {
             <Clerk.FieldError className="text-xs text-red-400" />
           </Clerk.Field>
           <Clerk.Field name="password" className="flex flex-col gap-2 mt-1">
-            <Clerk.Label className="text-xs text-gray-500">
-              Password
-            </Clerk.Label>
+            <Clerk.Label className="text-xs text-gray-500">Password</Clerk.Label>
             <Clerk.Input
               type="password"
               required
@@ -55,12 +51,13 @@ export default function LoginPage() {
           </Clerk.Field>
           <SignIn.Action
             submit
-            className="bg-blue-500 text-white my-2 rounded-lg text-sm p-[10px]"
+            className="bg-blue-500 text-white my-2 rounded-xl text-sm p-[10px]"
           >
             Sign In
           </SignIn.Action>
         </SignIn.Step>
       </SignIn.Root>
     </div>
+
   )
 }

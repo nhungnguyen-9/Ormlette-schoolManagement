@@ -1,6 +1,10 @@
+'use client'
+import { UserButton, useUser } from "@clerk/nextjs"
 import { Bell, CircleUserRound, MessageCircleMore, Search } from "lucide-react"
 
 export const Navbar = () => {
+    const { user } = useUser()
+
     return (
         <div className="flex items-center justify-between p-4">
             {/* search */}
@@ -21,7 +25,7 @@ export const Navbar = () => {
                     <span className="text-sm leading-3 font-medium">John Doe</span>
                     <span className="text-[10px] text-gray-500 text-right">Admin</span>
                 </div>
-                <CircleUserRound className="size-6" />
+                <UserButton />
             </div>
         </div>
     )
