@@ -5,6 +5,7 @@ import { Upload } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { InputField } from '../input-fields'
+import { Dispatch, SetStateAction } from 'react'
 
 const schema = z.object({
     username: z
@@ -28,11 +29,13 @@ const schema = z.object({
 type Inputs = z.infer<typeof schema>
 
 type StudentFormProps = {
+    setOpen: Dispatch<SetStateAction<boolean>>,
     type: "create" | "update";
     data?: any;
 }
 
 const StudentForm = ({
+    setOpen,
     type,
     data,
 }: StudentFormProps) => {

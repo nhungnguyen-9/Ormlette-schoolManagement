@@ -1,4 +1,5 @@
-import { FormModal } from "@/components/form-modal";
+import FormContainer from "@/components/form-container";
+import FormModal from "@/components/form-modal";
 import { Pagination } from "@/components/pagination";
 import { Table } from "@/components/table";
 import { TableSearch } from "@/components/table-search";
@@ -41,8 +42,8 @@ const renderRow = (item: SubjectList) => (
             <div className="flex items-center gap-2">
                 {role === "admin" && (
                     <>
-                        <FormModal table="subject" type="update" data={item} />
-                        <FormModal table="subject" type="delete" id={item.id} />
+                        <FormContainer table="subject" type="update" data={item} />
+                        <FormContainer table="subject" type="delete" id={item.id} />
                     </>
                 )}
             </div>
@@ -106,7 +107,7 @@ const SubjectListPage = async ({
                         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
                             <ArrowDownUp className="size-5" />
                         </button>
-                        {role === "admin" && <FormModal table="teacher" type="create" />}
+                        {role === "admin" && <FormContainer table="subject" type="create" />}
                     </div>
                 </div>
             </div>

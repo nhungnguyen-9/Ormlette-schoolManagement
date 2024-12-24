@@ -5,6 +5,7 @@ import { Upload } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { InputField } from '../input-fields'
+import { Dispatch, SetStateAction } from 'react'
 
 
 const schema = z.object({
@@ -31,11 +32,13 @@ const schema = z.object({
 type Inputs = z.infer<typeof schema>
 
 type TeacherFormProps = {
+    setOpen: Dispatch<SetStateAction<boolean>>,
     type: "create" | "update";
     data?: any;
 }
 
 const TeacherForm = ({
+    setOpen,
     type,
     data,
 }: TeacherFormProps) => {
